@@ -48,11 +48,13 @@ abstract class BaseController extends Controller {
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-
+        $this->initComponents();
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
     }
     
     abstract public function index ();
+    
+    protected function initComponents () { }
 }
